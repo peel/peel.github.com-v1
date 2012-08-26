@@ -73,8 +73,8 @@ This repository contains the source code for my personal website & blog based on
       <h5>It’s an info box! Your title goes here.</h5>
       <a class="button headed light arrow" href="#" target="_self"><span>Learn More</span></a>
     </div>
-``
-`
+```
+
 * Alert boxes
 
 ```
