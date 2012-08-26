@@ -1,0 +1,38 @@
+---
+layout: blog
+---
+
+			<section id="page">
+
+				<header id="pageHeader">
+					<h1>{{ page.title }}</h1>
+					<a href="#" class="actionButton minimize" data-content="#page" data-speed="600">minimize</a>
+				</header>
+
+				<div class="contentHolder clearfix">
+{% for post in site.categories[page.category] %}
+
+					<article class="post one_half clearfix">
+						
+						<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+
+						<ul class="postLinks">
+							<li class="category">
+								<strong>{{ post.categories | category_links }}</strong>
+							</li>
+							<li class="date">{{ post.date | date_to_string  }}</li>
+						</ul>
+
+						<p>{{ post.content | strip_html | truncatewords:50  }}</p>
+
+						<a class="read" href="{{ post.url }}">
+							<strong>Keep Reading <span>&rarr;</span></strong>
+						</a>
+
+					</article>
+  {% endfor %}
+					<div class="clearfix xtram"></div>				
+
+				</div>
+			</section>
+

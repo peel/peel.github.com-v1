@@ -1,0 +1,75 @@
+---
+layout: project_post
+---
+{% include head.html %}	
+	{% include sidebar.html %}	
+
+			<h1 id="title" class="hidden">{{ site.name }} / {{ page.title }}</h1>
+		
+			<article class="project clearfix">
+
+				<section class="projectSlides">
+
+					<div id="postSlider">
+
+						<div class="slides_container">
+                {% for attach in page.attach %}
+                  {% case attach.type %}
+                  {% when 'img' %}
+                  <div><img src="{{attach.url}}" alt="{{attach.title}}" /></div>
+                  {% when 'video' %}
+                  <div>
+                    <iframe width="600" height="338" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="{{ page.attach.url}}">
+                    </iframe>
+                  </div>
+                  {% endcase %}
+                {% endfor %}
+						</div>
+
+            {% if page.attach | size  > 1 %}
+						<div class="sliderControls">
+							<a href="#" class="sliderBtnPrev">Previous</a>
+							<a href="#" class="sliderBtnNext">Next</a>
+							<span class="sliderPagination">1 of {{ page.attach | size }}</span>
+						</div>
+            {% endif %}
+					</div>
+
+				</section>
+
+				<section class="projectContent nano">
+
+					<div class="content">
+
+						<h4>{{ page.title }}</h4>
+						<hr />
+
+						<span class="category">{{ page.tags }}</span>
+						<hr class="second" />
+
+                {{content}} 
+
+						<a class="actionButton close" href="#">Close</a>
+
+						<div id="shareLinks" class="shareLinks">
+							<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+							<div class="fb-like" data-send="false" data-layout="button_count" data-width="110" data-show-faces="false"></div>
+						</div>
+
+					</div>
+
+				</section>
+
+        {% if page.next.url %} 
+				<div id="nextProject" class="hidden"><a href="{{ page.next.url }}">{{ page.next.title }}</a></div>
+        {% endif %}
+
+        {% if page.previous.url %} 
+				<div id="previousProject" class="hidden"><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></div>
+        {% endif %}
+			
+			</article>
+
+
+  {% include foot.html %}
+{% include scripts.html %}

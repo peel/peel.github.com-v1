@@ -1,0 +1,37 @@
+---
+layout: default 
+---
+{% include head.html %}	
+
+	{% include sidebar.html %}	
+		
+			<section id="page">
+
+				<header id="pageHeader">
+					<h1>{{page.title}}</h1>
+					<a href="#" class="actionButton minimize" data-content="#page" data-speed="600">minimize</a>
+				</header>
+
+				<article class="contentHolder clearfix">
+
+          {% if page.fullwidth %}
+    				<div class="full_width">
+    					<h5 id="full_width">{{ page.fullwidth }}</h5>
+    				</div>
+					  <div class="hr clearfix"><hr /></div>
+          {% endif %}
+
+          {{ content }}
+
+					<div class="hr clearfix"><hr /></div>
+
+					<div class="full_width">
+						<a class="button headed light arrow" href="/notes/" target="_self"><span>Visit My Blog</span></a>
+					</div>
+				
+				</article>
+
+			</section>
+
+{% include foot.html %}
+{% include scripts.html %}

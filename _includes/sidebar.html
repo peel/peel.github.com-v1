@@ -1,0 +1,66 @@
+	<div id="sidebar">
+
+		<header id="header">
+			<div id="logo">
+				<a href="/">
+          <div>Dev<b>/Notepack</b></div>
+<!--					<img src="/assets/general/logo.png" alt="{{site.name}} / {{site.tagline}}" />-->
+				</a>
+			</div>
+			<p id="tagline"><b>Peel</b>'s notes about <b>scala</b>, <b>java</b>, <b>play!</b> and AOSP - {{site.tagline}}</p>
+		</header>
+
+		<nav id="menu">
+			<ul class="main-menu">
+        {% for link in site.navigation %} 
+          {% assign selected = nil %}
+          {% assign noteSelect = nil %}
+          {% assign archiveSelect = nil %}
+          {% if page.url == link.url or page.layout == link.layout or page.layout == 'blog' or page.layout == 'post' or page.layout == 'archive' %}
+            {% if link.layout == 'blog' or page.layout == 'blog' or page.layout == 'post' or page.layout == 'archive' %}
+                {% assign selected = 'opened' %}
+                {% case page.layout %}
+                    {% when 'blog' or 'post' %}
+                        {% assign noteSelect = 'selected' %}
+                    {% when 'archive' %}
+                        {% assign archiveSelect = 'selected' %}
+                {% endcase %}
+            {% else %}
+                {% assign selected = 'selected' %}
+            {% endif %}
+          {% endif %}
+        <li class="parent {{ selected }}">
+					<p><a href="{{ link.url }}">{{ link.text }}</a></p>
+          {% if link.url == '/notes/' %}
+					<div>
+						<ul class="sub-menu">	
+							<li class="{{ noteSelect }}"><p><a title="allblog" href="/notes/">Noted</a></p></li>
+							<li class="{{ archiveSelect }}"><p><a title="archive" href="/notes/archive/">Archive</a></p></li>
+						</ul>
+					</div>
+          {% endif %}
+				</li>
+        {% endfor %}
+			</ul>		
+		</nav>
+
+		<form id="responsiveMenu">
+			<select>
+				<option selected data-href="#">Site Navigation</option>
+        {% for link in site.navigation %} 
+    				<option data-href="{{ link.url }}">{{ link.text }}</option>
+        {% endfor %}
+			</select>
+		</form>
+		
+		<footer id="copy">
+			<p>Copyright © 2012 {{ site.copyright }}.</p>
+		</footer>
+
+		<a href="#" id="close">close sidebar</a>
+
+	</div>
+	<div id="content" class="clearfix">
+
+		<div>
+

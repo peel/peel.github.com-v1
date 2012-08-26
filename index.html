@@ -1,0 +1,85 @@
+---
+layout: blog
+title: notes
+permalink: /
+---
+			<section id="page">
+
+				<header id="pageHeader">
+					<h1>{{ page.title }}</h1>
+					<a href="#" class="actionButton minimize" data-content="#page" data-speed="600">minimize</a>
+				</header>
+
+				<div class="contentHolder clearfix">
+            {% for post in paginator.posts limit: 1%}
+            <article class="post contentHolder clearfix">
+              <h2><a href="{% unless post.category == 'projects' %}{{ post.url }}{% else %}/projects/{% endunless %}">{{ post.title }}</a></h2>
+              <ul class="postLinks">
+                {% if post.categories %}
+                  <li class="category">
+                    <strong>{{ post.categories | category_links }}</strong>
+                  </li>
+                {% endif %}
+                <li class="date">{{ post.date | date_to_string }}</li>
+              </ul>
+              <p style="text-align:justify">{{ post.content | strip_html | truncatewords:200 }}</p>
+              <a class="read" href="{% unless post.category == 'projects' %}{{ post.url }}{% else %}/projects/{% endunless %}">
+                <strong>Keep Reading <span>&rarr;</span></strong>
+              </a>
+            </article>
+            <div class="hr clearfix"><hr/></div>
+            {% endfor %}
+
+            {% for post in paginator.posts offset:1 %}
+            {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+					  <article class="post one_half clearfix">
+                <h3><a href="{% unless post.category == 'projects' %}{{ post.url }}{% else %}/projects/{% endunless %}">{{ post.title }}</a></h3>
+                <ul class="postLinks">
+                  <li class="category">
+                    <strong>{{ post.categories | category_links }}</strong>
+                  </li>
+                  <li class="date">{{ post.date | date_to_string }}</li>
+                </ul>
+
+                <p style="text-align:justify">{{ post.content | strip_html | truncatewords:50  }}</p>
+
+                <a class="read" href="{% unless post.category == 'projects' %}{{ post.url }}{% else %}/projects/{% endunless %}">
+                  <strong>Keep Reading <span>&rarr;</span></strong>
+                </a>
+            </article>
+            {% if thecycle == 'even' %}
+                <div class="clearfix xtram"></div>
+            {% endif %}
+            {% endfor %}
+
+								
+ 					  <div class='pagination'>
+                <div class='hr clearfix'><hr /></div>
+                <ul class='clearfix'>
+                  {% if paginator_previous_page %}
+                    <li><a class='btnPrev' href='/page{{paginator.prveious_page}}'>Previous</a></li>
+                  {% else %}
+                    <li><a class='btnPrev inactive'>Previous</a></li>
+                  {% endif %}
+                  {% if paginator.page == 1%}
+                      <li><a class='active'>1</a></li>
+                      {% else %}
+                      <li><a href="/">1</a></li>
+                  {% endif %}
+                  {% for count in (2..paginator.total_pages) %}
+                      {% if count == paginator.page %} 
+                      <li><a class='active'>{{ count }}</a></li>
+                      {% else %}
+                      <li><a href='/page{{count}}'>{{ count }}</a></li>
+                      {% endif %}
+                  {% endfor %}
+                  {% if paginator.next_page %}
+    							<li><a class='btnNext' href='/page{{paginator.next_page}}'>Next</a></li>
+                  {% else %}
+                      <li><a class='btnNext inactive'>Next</a></li>
+                  {% endif %}
+                </ul>
+					  </div>
+
+				</div>
+			</section>

@@ -1,0 +1,29 @@
+name: peel
+description: Random rants about software development
+url: http://peel.github.com
+tagline: "the dev and the core of development hardcore"
+copyright: Piotr Limanowski
+github: peel
+linkedin: gli8cbzlbgad
+auto: true
+permalink: /notes/:year/:month/:title
+markdown: rdiscount
+pygments: true
+paginate: 5
+feed: http://feeds.feedburner.com/peelthekid
+category_dir: /notes/category/
+category_title_prefix: 
+auto: false
+navigation:
+- text: Notes 
+  url: /notes/
+  layout: blog
+- text: Projects
+  url: /projects/ 
+  layout: projects
+- text: About me 
+  url: /about/
+  layout: page
+- text: Contact
+  url: /contact/
+  layout: contact

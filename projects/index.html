@@ -1,0 +1,30 @@
+---
+layout: projects 
+title: projects 
+---
+
+
+
+			<section id="portfolio" class="folioGrid clearfix">
+        {% for post in site.categories.projects %}
+				<a class="folioItem motion" data-type="{{ post.tag }}" href="{{ post.url }}" data-name="{{ post.title }}">
+
+					<img src="{{ post.icon }}" class="folioThumb" alt="{{ post.title }}" />
+					<div class="folioTextHolder">
+						<div class="folioText">
+							<h3>{{post.title}}</h3>
+							<p>{{ post.content | strip_html | truncatewords:30  }}</p>
+						</div>
+					</div>
+					
+				</a>
+        {% endfor %}
+
+				<ul class="folioCategories hidden">
+          {% for tag in site.tags %}
+					<li>{{tag.text}}</li>
+          {% endfor %}
+				</ul>
+
+			</section>
+

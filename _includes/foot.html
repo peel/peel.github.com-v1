@@ -1,0 +1,49 @@
+		</div>
+
+		<footer class="footer" id="topFooter">
+
+			<div class="left">
+				<div class="widget clearfix social">
+					<ul class="socialList clearfix">
+						<li><a target="_blank" class="twitter" href="http://twitter.com/peel">twitter icon</a></li>
+						<li><a target="_blank" class="github" href="http://github.com/peel">github icon</a></li>
+						<li><a target="_blank" class="linkedin" href="http://pl.linkedin.com/pub/piotr-limanowski/31/ba0/492">linkedin icon</a></li>
+						<li><a target="_blank" class="flickr" href="http://www.flickr.com/photos/plimanowski">flickr icon</a></li>
+						<li><a target="_blank" class="skype" href="skype:piotrlimanowski">skype icon</a></li>
+						<li><a target="_blank" class="rss" href="{{ site.feed }}">rss icon</a></li>
+					</ul>
+				</div>
+				<hr class="widget_separator" />
+				<div class="widget clearfix widget_search">
+					<form action="#" id="searchform" class="searchBox">
+						<input type="text" data-value="Type and hit Enter" value="Type and hit Enter" />
+	   				</form>
+	   			</div>			
+	   		</div>
+								
+      <!--
+			<div class="right">
+				<div class="widget clearfix phone">
+					<p class="phoneNumber">Hire Me <strong><a href="mailto:{{ site.mail }}">now</a></strong></p>
+				</div>			
+			</div>
+      -->
+				
+		</footer>
+
+		<footer class="footer" id="bottomFooter">
+			<div class="left">
+				<div class="widget clearfix twitter">
+					<p class="twitterIntro">Latest tweet:</p>
+					<p class="hidden twitterUser">peel</p>
+					<p class="twitterList"></p>
+				</div>			
+			</div>
+			<a href="#" id="top">Go to Top <span>&uarr;</span></a>
+		</footer>
+
+	</div>
+  {% if page.layout == 'contact' %}
+    	<div id="contactMapHolder"><div id="contactMap"></div></div>
+  {% endif %}
+</div>

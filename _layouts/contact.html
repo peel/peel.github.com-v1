@@ -1,0 +1,39 @@
+---
+layout: contact
+---
+{% include head.html %}	
+
+	{% include sidebar.html %}	
+	
+			<article id="contactDetails" class="clearfix">
+
+				<header>
+					<h4>Contact Me</h4>
+				</header>
+				<hr class="first" />
+
+				<ul class="contactIcons">
+					<li class="email"><a href="mailto:plimanowski@gmail.com">plimanowski@gmail.com</a></li>
+					<li class="address">I am located in <br/> Gdansk, PL</li>
+				</ul>
+
+				<h4>Write Me</h4>
+
+				<hr />
+
+				<form class="contactForm" id="contact" action="#">
+					<input id="formName" type="text" value="Name*" data-value="Name*" />
+					<input id="formEmail" type="text" value="Email*" data-value="Email*" />
+					<textarea id="formMessage" cols="83" rows="4" data-value="Message*">Message*</textarea>
+					<div class="form-submit">
+						<input id="submit" class="submit button small grey subtle" type="submit" value="Send" />
+					</div>
+					<p class="contactError">Please complete all fields with valid information.</p>
+				</form>
+
+				<a href="#" class="actionButton minimize" data-content="#contactDetails" data-speed="300">minimize</a>
+
+			</article>
+
+{% include foot.html %}
+{% include scripts.html %}

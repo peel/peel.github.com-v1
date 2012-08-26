@@ -1,0 +1,56 @@
+---
+layout: post
+comments: true
+---
+{% include head.html %}	
+
+	{% include sidebar.html %}	
+		
+			<section id="page" class="fullPost">
+
+				<header id="pageHeader">
+					<h1>Notes</h1>
+					<a href="#" class="actionButton minimize" data-content="#page" data-speed="600">minimize</a>
+				</header>
+
+				<article class="post contentHolder clearfix">
+
+					<h2>{{ page.title }}</h2>
+
+					<ul class="postLinks">
+            {% if page.categories %}
+			  			<li class="category">
+			  				<strong>{{page.categories | category_links }}</strong>
+			  			</li>
+            {% endif %}
+						<li class="date">{{ page.date | date_to_string }}</li>
+					</ul>
+
+            {{ content }}
+
+					<div class="commentsList">
+              {% include disqus.html %} 
+					</div>
+
+				</article>
+
+				<div class="hasButtonsPost">
+          {% if page.previous.url %} 
+	  				<div class="btnNext2 hoverBack">
+	  					<a href="{{ page.previous.url }}" rel="prev">Previous</a>
+	  				</div>
+           {% endif %} 
+					<div class="btnClose2 hoverBack">
+						<a href="/notes/">Close</a>
+					</div>
+          {% if page.next.url %} 
+  					<div class="btnPrev2 hoverBack">
+  						<a href="{{ page.next.url }}">Next</a>
+  					</div>
+          {% endif %}
+				</div>
+
+			</section>
+
+{% include foot.html %}
+{% include scripts.html %}
