@@ -6,6 +6,8 @@ date: '2012-08-24 19:53:55'
 ---
 
 A few best practices regarding designing REST APIs I try to follow when re/designing web grammar.
+<p class="alertBox notice">Notice &#8211; Will update w/ repo code.</p>
+
 
 ###Fundamentals
 
