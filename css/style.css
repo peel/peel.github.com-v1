@@ -3957,3 +3957,18 @@ img.about-photo{
     width:100%;
     padding:0 0 5px 0;
 }
+
+/* =============================================================================
+   code formatting
+   ========================================================================== */
+td.gutter{
+    padding-left:0.5em;
+}
+td.code{
+    padding-left:1em;
+}
+
+figure.code{
+    background-color: rgb(39, 40, 34);
+}
+

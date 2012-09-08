@@ -49,7 +49,7 @@ end
 
 desc "Run local jekyll server"
 task :server, [:port] do |t, args|
-  sh "jekyll --server #{args.port || 4000} --auto --time \"#{Time.now}\""
+  sh "jekyll --server #{args.port || 4000} --auto --time \"#{Time.now}\" --pygments"
 end
 
 desc "Create a new draft post"
