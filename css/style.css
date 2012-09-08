@@ -3961,14 +3961,14 @@ img.about-photo{
 /* =============================================================================
    code formatting
    ========================================================================== */
-td.gutter{
-    padding-left:0.5em;
-}
-td.code{
-    padding-left:1em;
-}
-
-figure.code{
+div.highlight{
+    padding:5px;
     background-color: rgb(39, 40, 34);
 }
-
+.highlight pre{
+    margin:0 0.5em;
+    padding:5px;
+}
+.highlight code{
+    line-height:110%;
+}
