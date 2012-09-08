@@ -38,7 +38,7 @@ As my OS of choice is OSX and at times I make use of ArchLinux it is simple enou
 
 #### **OSX VPN**
 Since Snow Leopard Apple does not expose an easy way for handling VPN server magic in non-server edition. However simply typing `which vpnd` will tell you where to start from.  
-Thus, we can do it the hacker or the easy way whereas the hacker way is the free way. Either way you'll need a few things to start with: ordinary username, password amd shared secret. The latter one's the code that's stored in the OSX Key Chain and exchanged at the handshake."t"d;>
+Thus, we can do it the hacker or the easy way whereas the hacker way is the free way. Either way you'll need a few things to start with: ordinary username, password amd shared secret. The latter one's the code that's stored in the OSX Key Chain and exchanged at the handshake.
 #### Easy way
 No real magic here. EasyVPN is a $5 alternative to terminal witchcraft. Just download, fill in as depicted below and you're good to go.   
 
@@ -46,7 +46,7 @@ No real magic here. EasyVPN is a $5 alternative to terminal witchcraft. Just dow
 
 Not many alternatives here, huh? Fortunately this is perfectly enough.
 I am no expert in VPNs but do know L2TP/PPTP are perfectly enough for my personal taste.
-PS. the app comes in a free bersion that won't be able to start up w/ the OS but aside from that has all the features you'll need>;>
+PS. the app comes in a free bersion that won't be able to start up w/ the OS but aside from that has all the features you'll need>
 #### Hacker way
 And this is where the fun begins.  
 
