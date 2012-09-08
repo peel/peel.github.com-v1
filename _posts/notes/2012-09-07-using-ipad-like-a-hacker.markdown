@@ -175,11 +175,7 @@ For the secret authentication using chap, you'll need to setup your credentials 
 ######fire up the service on startup
 Yup, pretty important one, isn't it?  
 {% highlight bash %}$ vi -p /System/Library/LaunchDaemons/com.apple.ppp.l2tp.plist /System/Library/LaunchDaemons/com.apple.ppp.pptp.plist {% endhighlight %}
-This time contents should look like <ul class="toggle">
-      <li>
-        <a href="#">Title goes here</a>
-        <a class="open" href="#">open</a>
-        <div>this:
+This time contents should look like:
 
 {% highlight xml %}<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
