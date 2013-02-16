@@ -1,56 +1,77 @@
 ---
-layout: post
+layout: default
 comments: true
 ---
-{% include head.html %}	
+                    
+<!-- .blog-single -->
+<div class="blog-single readable-content">
 
-	{% include sidebar.html %}	
-		
-			<section id="page" class="fullPost">
 
-				<header id="pageHeader">
-					<h1>Notes</h1>
-					<a href="#" class="actionButton minimize" data-content="#page" data-speed="600">minimize</a>
-				</header>
+<!-- .hentry -->
+<article class="post type-post format-standard hentry">
+                            
+                            
+    <!-- .entry-header -->
+    <header class="entry-header">
+        <h1 class="entry-title"><a href="{% unless page.category == 'projects' %}{{ page.url }}{% else %}/projects/{% endunless %}" rel="bookmark">{{page.title}}</a></h1>
+    </header>
+    <!-- .entry-header -->
 
-				<article class="post contentHolder clearfix">
+    <!-- .entry-meta -->
+    <div class="entry-meta">
+        posted in 
+        <a href="{{page.categories | category.links limit=1}}" title="View all posts in {{page.categoties}}" rel="category">{% if page.categories %}{{page.categories | category_links }}{% endif %}</a>
+        on <a href="#" title="{{ page.date | date_to_string }}" rel="bookmark"><time class="entry-date"  pubdate="">{{ page.date | date_to_string }}</time></a>
+        <span class="by-author"> by <span class="author vcard">
+        <a class="url fn n" href="#" title="View all posts by {{ site.author }}" rel="author">{{site.author}}</a></span></span>.				
+    </div>
 
-					<h2>{{ page.title }}</h2>
+    {% if page.image %}
+    <div class="featured-image">
+        <img src="/assets/images/blog/{{page.image}}" alt="blog-image">
+    </div>
+    {% endif %}
 
-					<ul class="postLinks">
-            {% if page.categories %}
-			  			<li class="category">
-			  				<strong>{{page.categories | category_links }}</strong>
-			  			</li>
+    <!-- .entry-content --> 
+    <div class="entry-content">
+    
+        {{ content }} 
+
+        <div class="related-posts">
+            <h3>RELATED POSTS</h3>
+            <ol>
+                {% for post in site.related_posts %}
+                    <li><a href="{{post.url}}" rel="bookmark">{{post.title}}</a></li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+    <!-- .entry-content -->
+        
+</article>
+<!-- .hentry -->
+    
+{% include author-foot.html %}
+
+    <nav class="nav-single row-fluid">
+        <span class="nav-previous span6">
+            {% if page.previous.url %} 
+            <h4>PREVIOUS POST</h4>
+            <a href="{{ page.previous.url }}" rel="prev"><span class="meta-nav">←</span> {{ page.previous.title }}</a>
+            {% else %}
+            <h4>HOME</h4>
+            <a href="/" rel="prev"><span class="meta-nav">←</span> Home</a>
             {% endif %}
-						<li class="date">{{ page.date | date_to_string }}</li>
-					</ul>
+        </span>
+        
+        {% if page.next.url %} 
+        <span class="nav-next span6">
+            <h4>NEXT POST</h4>
+            <a href="{{ page.next.url }}" rel="next">{{ page.next.title }} <span class="meta-nav">→</span></a>
+        </span>
+        {% endif %}
+    </nav>
 
-            {{ content }}
-
-					<div class="commentsList">
-              {% include disqus.html %} 
-					</div>
-
-				</article>
-
-				<div class="hasButtonsPost">
-          {% if page.previous.url %} 
-	  				<div class="btnNext2 hoverBack">
-	  					<a href="{{ page.previous.url }}" rel="prev">Previous</a>
-	  				</div>
-           {% endif %} 
-					<div class="btnClose2 hoverBack">
-						<a href="/notes/">Close</a>
-					</div>
-          {% if page.next.url %} 
-  					<div class="btnPrev2 hoverBack">
-  						<a href="{{ page.next.url }}">Next</a>
-  					</div>
-          {% endif %}
-				</div>
-
-			</section>
-
-{% include foot.html %}
-{% include scripts.html %}
+    <div class="commentsList">
+        {% include disqus.html %} 
+</div>

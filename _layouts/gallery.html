@@ -1,0 +1,57 @@
+---
+layout: default
+comments: true
+---
+
+<!-- .post .format-gallery -->										
+<article class="post type-post format-gallery hentry">
+
+<!-- .entry-header -->
+    <header class="entry-header">
+        <h1 class="entry-title"><a href="{% unless page.category == 'projects' %}{{ page.url }}{% else %}/projects/{% endunless %}" rel="bookmark">{{page.title}}</a></h1>
+    </header>
+    <!-- .entry-header -->
+        
+        
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+        <a href="#" title="{{ page.date | date_to_string }}" rel="bookmark"><time class="entry-date"  pubdate="">{{ page.date | date_to_string }}</time></a>
+    </footer>
+    <!-- .entry-meta -->
+        
+    <!-- .entry-content -->   
+    <div class="entry-content">
+        
+        <!-- .flexslider -->
+        <div class="flexslider" data-autoplay="false" data-interval="3000" data-animation="slide" data-direction="horizontal" data-animationSpeed="800"  data-pauseOnHover="true">
+            <!-- .slides -->
+            <ul class="slides">
+                
+                {% for image in page.resource limit = 1 %}
+                <!-- slide -->
+                <li>
+                    <img src="/assets/blog/{{image}}" alt="slide">
+                    <p class="flex-title">{{page.title}}</p>
+                </li>
+                <!-- slide -->
+                {% endfor %}
+                
+                {% for image in page.resource offset = 1 %}
+                <!-- slide -->
+                <li>
+                    <img src="/assets/blog/{{image}}" alt="slide">
+                </li>
+                <!-- slide -->
+                {% endfor %}
+                
+            </ul>
+            <!-- .slides -->
+        </div>
+        <!-- .flexslider -->
+        
+    </div>
+    <!-- .entry-content -->
+    
+    
+</article>
+<!-- .post .format-gallery -->

@@ -1,0 +1,41 @@
+---
+layout: page
+---
+
+<div class="entry-content">
+    <!-- PORTFOLIO -->
+    <div class="portfolio-items" style="position: relative; overflow: hidden; height: 682px; ">
+        
+        {% for project in site.categories.projects limit:1%}
+        <div class="coding hentry x2">
+        <div class="media-box">
+            <img src="{% if project.resource %}{{project.resource}}{% else %}http://placehold.it/604x461/f3f3f3/&text={{project.title}}{% endif %}" alt="portfolio-post">
+            <div class="mask">
+                <div class="portfolio-info">
+                    <h3>{{project.title}}</h3>
+                    <p class="category">{{project.category}}</p>
+                </div>
+                <a href="{{project.url}}" title="{{project.title}}"></a>
+            </div>
+        </div>
+        </div>
+        {% endfor %}
+        
+        {% for project in site.categories.projects offset:1%}
+        <div class="logo image hentry">
+        <div class="media-box">
+            <img src="{% if project.resource %}{{project.resource}}{% else %}http://placehold.it/302x235/f3f3f3/&text={{project.title}}{% endif %}" alt="portfolio-post">
+            <div class="mask">
+                <div class="portfolio-info">
+                    <h3>{{project.title}}</h3>
+                    <p class="category">{{project.category}}</p>
+                </div>
+                <a href="{{project.url}}" title="{{project.title}}"></a>
+            </div>
+        </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- PORTFOLIO -->
+
+</div>

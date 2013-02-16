@@ -1,37 +1,128 @@
 <!DOCTYPE html>
 <!--[if lt IE 8]><html dir="ltr" lang="en-US" class="ie7" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
 <!--[if IE 8]><html dir="ltr" lang="en-US" class="ie8" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
-<!--[if gt IE 8]><!--><html dir="ltr" lang="en-US" xmlns="http://www.w3.org/1999/xhtml"><!--<![endif]-->
-
+<!--[if gt IE 8]><!--><html dir="ltr" lang="en-US" xmlns="http://www.w3.org/1999/xhtml"><!--<![endif]--><html>
 <head>
 
-	<meta charset="UTF-8" />
-	<meta name="author" content="peel.github.com" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-	
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="read, blog, html5, portfolio">
+    <meta name="author" content="{{ site.copyright }}" />
+    
   {% if page.title %}	
     <title>{{site.name}} / {{page.title}}</title>
   {% else %}
     <title>{{site.name}}</title>
   {% endif %}
+    
+    <!-- FAV and TOUCH ICONS -->
+    <link rel="shortcut icon" href="/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/logo-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/logo-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/logo-72.png">
+    <link rel="apple-touch-icon-precomposed" href="/assets/ico/logo-57.png">
+    
+    <!-- FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=UnifrakturMaguntia' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Coustard' rel='stylesheet' type='text/css'>
+    
+    <!--[if lte IE 9]>
+        <script src="/assets/js/html5shiv.js"></script>
+        <script src="/assets/js/selectivizr-min.js"></script>
+    <![endif]-->
+    
+    <!-- STYLES -->
+    <link rel="stylesheet" type="text/css" media="print" href="/assets/css/print.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/assets/js/google-code-prettify/prettify.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/uniform.default.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/flexslider.css">
+    
+    <!-- SCRIPTS -->
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.8.2.min.js"><\/script>')</script>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script language="Javascript" type="text/javascript">
+        google.load("search", "1");
+        
+        function OnLoad() {
+            // Create a search control
+            var searchControl = new google.search.SearchControl();
+                
+            // Add in a WebSearch
+            var webSearch = new google.search.WebSearch();
+                
+            // Restrict our search to pages from this site
+            webSearch.setSiteRestriction('your site url');
+                
+            // Add the searcher to the SearchControl
+            searchControl.addSearcher(webSearch);
+                
+            // tell the searcher to draw itself and tell it where to attach
+            searchControl.draw(document.getElementById("search"));
+        }
+        google.setOnLoadCallback(OnLoad);
+    </script>
 
-	<link rel="stylesheet" type="text/css" media="all" href="/css/style.css" />
-	<link rel="stylesheet" type="text/css" media="all" href="/css/pygments.css" />
-	<link rel="shortcut icon" type="image/x-icon" href="/assets/general/favicon.ico" />
-  <link rel="apple-touch-icon" href="/assets/general/apple-touch-icon-iphone.png" /> 
-  <link rel="apple-touch-icon" sizes="72x72" href="/assets/general/apple-touch-icon-ipad.png" /> 
-  <link rel="apple-touch-icon" sizes="114x114" href="/assets/general/apple-touch-icon-iphone4.png" />
-  <link rel="apple-touch-icon" sizes="144x144" href="/assets/general/apple-touch-icon-ipad3.png" />
-     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-		
 </head>
 
-<body id="body" class="Dark Stick Left Fill Default
-    {% case page.layout %}
-        {% when 'blog' %}template-blog
-        {% when 'projects' %}template-portfolio
-        {% when 'projects-post' %}template-portfolio
-        {% when 'page' %}template-contact
-    {% endcase %}">
+<body>
+    <!-- #PAGE -->
+    <div id="page" class="hfeed site"> 
+      
+      <!-- .site-header -->
+      <header class="site-header wrapper" role="banner"> 
+        
+        <!-- .row -->
+        <div class="row" id="navigation-container"> 
+          
+          <!-- #site-navigation -->
+          <nav id="site-navigation" class="main-navigation" role="navigation">
+            <ul>
+              <li class="site-title {%if page.url=='/' %}current-menu-item{%endif%}"><a href="/">The Infix Notes</a></li>
+              {% for link in site.navigation %} 
+              {% if link.url == '/notes/' %}
+              <li><a href="/notes/">Notes</a>
+                <ul>
+                  <li><a href="/notes/">Noted</a></li>
+                  <li><a href="/notes/archive">Archive</a></li>
+                </ul>
+              </li>
+              {% else %}
+              <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+              {% endif %}
+              {% endfor %}
+              <li>
+                <form role="search" method="get" id="search-form" action="/search.html">
+                    <label class="screen-reader-text" for="search">Search</label>
+                    <input type="text" value="" name="search" id="search" title="Enter keyword">
+                    <input type="submit" id="search-submit" title="Search it" value="→">
+                </form>
+              </li>
+            </ul>
+          </nav>
+          <!-- #site-navigation --> 
+          
+        </div>
+        <!-- .row --> 
+        
+      </header>
+      <!-- .site-header --> 
 
-<a href="https://github.com/{{ site.github }}"><img style="z-index:10; position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+      <!-- #main -->
+      <section id="main" class="middle wrapper">
+        <div class="row row-fluid">
+        
+            <!-- #primary -->
+            <div id="primary" class="site-content">
+                
+                <!-- #content -->
+                <div id="content" role="main">

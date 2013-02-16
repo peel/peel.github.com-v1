@@ -1,0 +1,30 @@
+---
+layout: default
+comments: true
+---
+
+<!-- .post .format-quote -->	
+<article class="post type-post format-quote hentry">
+    
+    <!-- .entry-header -->
+    <header class="entry-header">
+        <h1 class="entry-title"><a href="{% unless page.category == 'projects' %}{{ page.url }}{% else %}/projects/{% endunless %}" rel="bookmark">{{page.title}}</a></h1>
+    </header>
+    <!-- .entry-header -->
+    
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+        <a href="#" title="{{ page.date | date_to_string }}" rel="bookmark"><time class="entry-date"  pubdate="">{{ page.date | date_to_string }}</time></a>
+    </footer>
+    <!-- .entry-meta -->
+    
+    <!-- .entry-content -->
+    <div class="entry-content">
+        <blockquote>{{page.quote}}
+            <cite>{{page.cite}}</cite>
+        </blockquote>
+    </div>
+    <!-- .entry-content -->
+    
+</article>
+<!-- .post .format-quote -->

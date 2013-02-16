@@ -1,0 +1,35 @@
+--
+layout: default
+comments: true
+---
+
+<!-- .post .format-audio -->										
+<article class="post type-post format-audio hentry">
+
+    <!-- .entry-header -->
+    <header class="entry-header">
+    <h1 class="entry-title"><a href="{% unless page.category == 'projects' %}{{ page.url }}{% else %}/projects/{% endunless %}" rel="bookmark">{{page.title}}</a></h1>
+    </header>
+    <!-- .entry-header -->
+
+    <div class="entry-meta">
+        <span class="by-author"> by <span class="author vcard">
+        <a class="url fn n" href="#" title="View all posts by {{ site.author }}" rel="author">{{site.author}}</a></span></span>.				
+    </div>
+        
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+        <a href="#" title="{{ page.date | date_to_string }}" rel="bookmark"><time class="entry-date"  pubdate="">{{ page.date | date_to_string }}</time></a>
+    </footer>
+    <!-- .entry-meta -->
+        
+    <!-- .entry-content -->   
+    <div class="entry-content">
+        
+        <audio preload="none" src="{{page.resource}}" type="audio/mp3" style="width: 100%;"></audio>
+        
+    </div>
+    <!-- .entry-content -->
+    
+</article>
+<!-- .post .format-audio -->

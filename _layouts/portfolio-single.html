@@ -1,0 +1,35 @@
+---
+layout: default 
+---		
+
+<article class="page type-page hentry">
+                            
+        <!-- .entry-header -->
+        <header class="entry-header">
+        <h1 class="entry-title">{{page.title}}</h1>
+        <p class="department">{{page.tags}}</p>
+        </header>
+        <!-- .entry-header -->
+        
+        <!-- .entry-content -->
+        <div class="entry-content">
+            
+            <!-- .portfolio-text -->
+            <div class="portfolio-text">
+                
+                <p>{{page.description}}</p>
+                {% if page.link %}<p class="launch-wrap"><a href="#">Launch Project</a></p>{% endif %}
+                
+            </div>
+            <!-- .portfolio-text -->
+            
+            {{ content }} 
+            
+        </div>
+        <!-- .entry-content -->
+        
+</article>
+
+<div class="back-to-portfolio portfolio-text">
+    <p class="launch-wrap"><a href="/portfolio">BACK TO PORTFOLIO</a></p>
+</div>

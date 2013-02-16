@@ -1,25 +1,29 @@
-name: peel
+name: infix notes
 description: "Notes on scala, java, play! and AOSP - the dev and the core of development hardcore curated by Piotr Limanowski"
 url: http://peel.github.com
-tagline: "the dev and the core of development hardcore"
+tagline: "the notes from somewhere inbetween"
 copyright: Piotr Limanowski
-github: peel
-linkedin: gli8cbzlbgad
+author: Piotr Limanowski
+author-bio: "Software Engineering professional with creative talent, analytical abilities, great people skills and passion. Appreciated team worker and eager to work in new technologies new-experience-seeker. Always paying attention to detail open-source enthusiast and commiter."
+author-img: "photo.jpg"
+
 auto: true
 permalink: /notes/:year/:month/:title
 markdown: rdiscount
 pygments: true
 paginate: 5
+
+github: peel
+linkedin: gli8cbzlbgad
 feed: http://feeds.feedburner.com/peelthekid
-category_dir: /notes/category/
-category_title_prefix: 
 auto: false
+
 navigation:
 - text: Notes 
   url: /notes/
   layout: blog
 - text: Projects
-  url: /projects/ 
+  url: /portfolio/ 
   layout: projects
 - text: About me 
   url: /about/
@@ -28,5 +32,10 @@ navigation:
   url: /contact/
   layout: contact
 - text: 
-- text: smoko break
-  url: http://peelthekid.tumblr.com
+
+social-github: http://github.com/peel
+social-twitter: http://twitter.com/peel
+social-linkedin: http://www.linkedin.com/pub/piotr-limanowski/31/ba0/492
+social-skype: skype:piotrlimanowski
+social-tumblr: http://peelthekid.tumblr.com
+social-lastfm: http://last.fm/users/peelsky

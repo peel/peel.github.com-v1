@@ -1,37 +1,26 @@
 ---
 layout: default 
 ---
-{% include head.html %}	
-
-	{% include sidebar.html %}	
 		
-			<section id="page">
+<!-- .hentry -->
+<article class="page hentry">
 
-				<header id="pageHeader">
-					<h1>{{page.title}}</h1>
-					<a href="#" class="actionButton minimize" data-content="#page" data-speed="600">minimize</a>
-				</header>
 
-				<article class="contentHolder clearfix">
+    <!-- .entry-header -->
+    <header class="entry-header">
+    <h1 class="entry-title">{{page.title}}</h1>
+    </header>
+    <!-- .entry-header -->
 
-          {% if page.fullwidth %}
-    				<div class="full_width">
-    					<h5 id="full_width">{{ page.fullwidth }}</h5>
-    				</div>
-					  <div class="hr clearfix"><hr /></div>
-          {% endif %}
 
-          {{ content }}
+    <!-- .entry-content -->
+    <div class="entry-content">
+        
+        {{ content }}      
+        
+    </div>
+    <!-- .entry-content -->
 
-					<div class="hr clearfix"><hr /></div>
 
-					<div class="full_width">
-						<a class="button headed light arrow" href="/notes/" target="_self"><span>Check out my notes</span></a>
-					</div>
-				
-				</article>
-
-			</section>
-
-{% include foot.html %}
-{% include scripts.html %}
+</article>
+<!-- .hentry -->

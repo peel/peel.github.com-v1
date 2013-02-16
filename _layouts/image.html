@@ -1,0 +1,34 @@
+---
+layout: default
+comments: true
+---
+
+<!-- .post .format-image -->										
+<article class="post type-post format-image hentry">
+
+    <!-- .entry-header -->
+    <header class="entry-header">
+        <h1 class="entry-title"><a href="{% unless page.category == 'projects' %}{{ page.url }}{% else %}/projects/{% endunless %}" rel="bookmark">{{page.title}}</a></h1>
+    </header>
+    <!-- .entry-header -->
+        
+        
+    <!-- .entry-meta --> 
+    <footer class="entry-meta">
+        <a href="#" title="{{ page.date | date_to_string }}" rel="bookmark"><time class="entry-date"  pubdate="">{{ page.date | date_to_string }}</time></a>
+    </footer>
+    <!-- .entry-meta -->
+        
+    <!-- .entry-content -->   
+    <div class="entry-content">
+        
+        <img src="/assets/blog/{{page.resource}}" alt="image post">
+        
+        <p>{{content}}</p>
+        
+    </div>
+    <!-- .entry-content -->
+    
+    
+</article>
+<!-- .post .format-image -->

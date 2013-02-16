@@ -1,0 +1,58 @@
+---
+layout: default 
+---
+
+<div class="readable-content row-fluid page">
+
+    {% include circle.html %}
+
+                                        
+    <p>{{site.author-bio}}</p>
+    <div class="cta row-fluid">
+        <!-- .span6 -->
+        <div class="span8">
+            <h3>Check out my digital resume.</h3>
+            <p>Whether you are completing a team for a new project, or you are interested in what I've been up to, feel free to check it out.</p>
+        </div>
+        <!-- .span6 -->
+        
+        <!-- .span4 -->
+        <div class="span4 cta-button">
+            <a href="{{site.social-linkedin}}" class="button big navy d3 icon-button"><i class="icon-download-alt"></i>RESUME</a>
+        </div>
+        <!-- .span4 -->
+    </div>
+
+
+    {% include skillset.html %}
+
+
+    <h3>Let's socialize!</h3>
+
+        <!-- social icons -->
+        <ul class="social">
+            {%if site.social-facebook %}<li><a class="facebook" href="{{site.social-facebook}}">&#88;</a></li>{% endif %}
+            {%if site.social-twitter %}<li><a class="twitter" href="{{site.social-twitter}}">&#95;</a></li>{% endif %}
+            {%if site.social-linkedin %}<li><a class="linkedin" href="{{site.social-linkedin}}">&#118;</a></li>{% endif %}
+            {%if site.social-google %}<li><a class="google" href="{{site.social-google}}">&#107;</a></li>{% endif %}
+            {%if site.social-vimeo %}<li><a class="vimeo" href="{{site.social-vimeo}}">&#33;</a></li>{% endif %}
+            {%if site.social-pinterest %}<li><a class="pinterest" href="{{site.social-pinterest}}"></a></li>{% endif %}
+            {%if site.social-flickr %}<li><a class="flickr" href="{{site.social-flickr}}">&#98;</a></li>{% endif %}
+            {%if site.social-dribble %}<li><a class="dribble" href="{{site.social-dribble}}">&#83;</a></li>{% endif %}
+            {%if site.social-lastfm %}<li><a class="lastfm" href="{{site.social-lastfm}}">&#117;</a></li>{% endif %}
+            {%if site.social-rss %}<li><a class="rss" href="{{site.social-rss}}">&#42;</a></li>{% endif %}
+            {%if site.social-forrst %}<li><a class="forrst" href="{{site.social-forrst}}">&#100;</a></li>{% endif %}
+            {%if site.social-skype %}<li><a class="skype" href="{{site.social-skype}}">&#58;</a></li>{% endif %}
+            {%if site.social-picassa %}<li><a class="picassa" href="{{site.social-picassa}}">&#56;</a></li>{% endif %}
+            {%if site.social-youtube %}<li><a class="youtube" href="{{site.social-youtube}}">&#39;</a></li>{% endif %}
+            {%if site.social-behance %}<li><a class="behance" href="{{site.social-behance}}">&#71;</a></li>{% endif %}
+            {%if site.social-tumblr %}<li><a class="tumblr" href="{{site.social-tumblr}}">&#92;</a></li>{% endif %}
+            {%if site.social-blogger %}<li><a class="blogger" href="{{site.social-blogger}}">&#74;</a></li>{% endif %}
+            {%if site.social-delicious %}<li><a class="delicious" href="{{site.social-delicious}}">&#76;</a></li>{% endif %}
+            {%if site.social-digg %}<li><a class="digg" href="{{site.social-digg}}">&#81;</a></li>{% endif %}
+            {%if site.social-friendsfeed %}<li><a class="friendfeed" href="{{site.social-friendfeed}}">&#102;</a></li>{% endif %}
+            {%if site.social-github %}<li><a class="github" href="{{site.social-github}}">&#106;</a></li>{% endif %}
+            {%if site.social-wordpress %}<li><a class="wordpress" href="{{site.social-wordpress}}">$</a></li>{% endif %}
+    </ul>
+    <!-- social icons -->
+</div>
