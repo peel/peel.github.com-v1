@@ -20,7 +20,7 @@ permalink: /
             <ul>
                 {% for post in paginator.posts limit: 8 %}
                 <li>
-                    <h3><a href="{% unless post.category == 'projects' %}{{ post.url }}{% else %}/projects/{% endunless %}">{{ post.title }}</a></h3>
+                    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
                     <span class="date">{{ post.date | date_to_string }}</span>
                 </li>
                 {% endfor %}
